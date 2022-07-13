@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>{% block head_title %}Home{% endblock %}</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link href="https://webfontworld.github.io/vitro/VitroCore.css" rel="stylesheet">
+
+
+  <!-- Vendor CSS Files -->
+
+  <link href="{% static 'main/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'main/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'main/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'main/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">  
+  <link href="{% static 'main/vendor/remixicon/remixicon.css' %}" rel="stylesheet">
+  <link href="{% static 'main/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <link rel="stylesheet" href="{% static 'main/vendor/glightbox/css/glightbox.min.css' %}" >
+  <link href="{% static 'main/css/style.css' %}" rel="stylesheet">
+
+  
+</head>
+
+{% block extrahead%}{% endblock %}
+
+
+
+<body>
+
+
+
+
+
+
+  {% include 'main/header.html' %}
+  
+
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center justify-content-center">
+    <div class="container">
+      <div class="row">
+  
+        <div class="col-md-offset-2 col-md-8 col-sm-offset-1 col-sm-10">
+            <div class="wow fadeInUp section-title" data-wow-delay="0.6s">
+                {% for data in datas %}
+              <h2> Background of Study</h2>
+             
+            </div>
+        </div>
+  
+        <div class="clearfix"></div>
+  
+  
+  
+         <!-- ======= 김성호  ======= -->
+        <div class="row-cols-md-2 col-sm wow fadeInUp" data-wow-delay="0.3s">
+          <div class="back-thumb">
+            <div class="feature-icon">
+               <span><i class="fa fa-cutlery"></i></span>
+            </div>
+            <tr>
+                
+                <td>>{{ data.name  }}</td>
+                <td class="center"><span>{{ data.explain }}</span></td>
+                <td class="center"><span>{{ data.tap }}</span></td>
+             
+            </tr>
+            {%endfor%}
+           
+          </div>
+        </div>
+  
+  
+
+
+
+    <a class="carousel-control-prev" href="{% url '1_team' %}" role="button" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+    </a>
+    <a class="carousel-control-next" href="{% url '1_effect' %}" role="button" data-bs-slide="next">
+      <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+    </a>
+  </section><!-- End Hero -->
+
+
+
+
+  {% include 'main/footer.html' %}
+
+
+
+
+
+  </body>
+
+</html>
+
+
+

@@ -1,0 +1,43 @@
+{% load static %}
+{% block content %}
+
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top ">
+  <div class="container d-flex align-items-center justify-content-lg-between">
+
+    <h1 class="logo me-auto me-lg-0"><a href="{% url 'home' %}">Gp<span>.</span></a></h1>
+    <!-- Uncomment below if you prefer to use an image logo -->
+    <!-- <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+    <nav id="navbar" class="navbar order-last order-lg-0">
+      <ul>
+        <li><a class="nav-link scrollto active" href="{% url 'home' %}">Home</a></li>
+   
+        <li class="dropdown"><a href="
+          {% url '1_team' %}"><span>소개</span> <i class="bi bi-chevron-down"></i></a>
+          <ul>
+          <li><a href="{% url '1_team' %}">팀원 및 역할</a></li>
+          <li><a href="{% url '1_back' %}">분석 배경</a></li>
+          <li><a href="{% url '1_effect' %}">기대 효과</a></li>
+        </ul>
+        </li>
+       
+        <li class="dropdown"><a href="{% url '2_db' %}"><span>데이터분석</span> <i class="bi bi-chevron-down"></i></a>
+          <ul>
+          <li><a href="{% url '2_db' %}">DB설계</a></li>
+          <li><a href="{% url '2_process' %}">분석 과정</a></li>
+          <li><a href="{% url '2_ending' %}">결론</a></li>
+        </ul>
+        <li><a class="nav-link scrollto" href= "{% url '3_predict' %}">여행지 추천</a></li>
+        
+        <li><a class="nav-link scrollto" href="{% url '4_review' %}">후기</a></li>
+      </ul>
+      <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav><!-- .navbar -->
+
+    <a href="#about" class="get-started-btn scrollto">Get Started</a>
+
+  </div>
+</header><!-- End Header -->
+{% endblock %}
+
